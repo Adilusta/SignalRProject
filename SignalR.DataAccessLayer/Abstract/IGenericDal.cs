@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace SignalR.DataAccessLayer.Abstract
 {
-    public interface IGenericDal<T> where T : class, IEntity, new()
+    public interface IGenericDal<TEntity> where TEntity : class, IEntity, new()
     {
-        void Add(T entity);
-        void Delete(T entity);
-        void Update(T entity);
-        T GetById(int id);
-        List<T> GetListAll();
+        void Add(TEntity entity);
+        void Delete(TEntity entity);
+        void Update(TEntity entity);
+        TEntity GetById(int id);
+        List<TEntity> GetListAll();
     }
 }
