@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SignalR.EntityLayer.Abstract;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SignalR.EntityLayer.Entities
 {
-    public class SocialMedia
+    public class SocialMedia : IEntity
     {
         public int SocialMediaID { get; set; }
         public string Title { get; set; }

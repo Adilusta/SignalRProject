@@ -1,6 +1,8 @@
-﻿namespace SignalR.EntityLayer.Entities
+﻿using SignalR.EntityLayer.Abstract;
+
+namespace SignalR.EntityLayer.Entities
 {
-    public class About
+    public class About : IEntity
     {
         public int AboutID { get; set; }
         public string ImageURL { get; set; }

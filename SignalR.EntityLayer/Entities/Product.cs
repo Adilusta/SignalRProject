@@ -1,6 +1,8 @@
-﻿namespace SignalR.EntityLayer.Entities
+﻿using SignalR.EntityLayer.Abstract;
+
+namespace SignalR.EntityLayer.Entities
 {
-    public class Product
+    public class Product : IEntity
     {
         public int ProductID { get; set; }
         public string ProductName { get; set; }

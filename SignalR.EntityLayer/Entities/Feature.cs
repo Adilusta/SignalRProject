@@ -1,6 +1,8 @@
-﻿namespace SignalR.EntityLayer.Entities
+﻿using SignalR.EntityLayer.Abstract;
+
+namespace SignalR.EntityLayer.Entities
 {
-    public class Feature
+    public class Feature : IEntity
     {
         public int FeatureID { get; set; }
         public string Title1{ get; set; }
