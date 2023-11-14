@@ -18,6 +18,11 @@ namespace SignalR.BusinessLayer.Concrete
             _productDal = productDal;
         }
 
+        public List<Product> GetProductsWithCategories()
+        {
+           return _productDal.GetProductsWithCategories();
+        }
+
         public void TAdd(Product entity)
         {
             _productDal.Add(entity);
