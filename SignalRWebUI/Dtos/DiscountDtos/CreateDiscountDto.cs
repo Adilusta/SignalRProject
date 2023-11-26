@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalRWebUI.Dtos.AboutDtos
+namespace SignalRWebUI.Dtos.DiscountDtos
 {
-    public class CreateAboutDto
+    public class CreateDiscountDto
     {
-        public string ImageURL { get; set; }
         public string Title { get; set; }
+        public string Amount { get; set; }
         public string Description { get; set; }
+        public string ImageUrl { get; set; }
+        public bool Status { get; set; }
     }
 }

@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SignalRWebUI.Dtos.AboutDtos
+namespace SignalRWebUI.Dtos.SocialMediaDtos
 {
-    public class CreateAboutDto
+    public class CreateSocialMediaDto
     {
-        public string ImageURL { get; set; }
         public string Title { get; set; }
-        public string Description { get; set; }
+        public string Url { get; set; }
+        public string Icon { get; set; }
     }
 }

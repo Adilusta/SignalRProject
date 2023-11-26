@@ -22,13 +22,13 @@ namespace SignalRApi.Controllers
         [HttpGet]
         public IActionResult AboutList()
         {
-            var values = _mapper.Map<ResultAboutDto>(_aboutService.TGetListAll());
+            var values = _mapper.Map<List<ResultAboutDto>>(_aboutService.TGetListAll());
             return Ok(values);
         }
         [HttpPost]
         public IActionResult CreateAbout(CreateAboutDto createAboutDto)
         {
-            var value=_mapper.Map<About>(createAboutDto);
+            var value = _mapper.Map<About>(createAboutDto);
             //About about = new About()
             //{
             //    Title= createAboutDto.Title,
@@ -38,7 +38,7 @@ namespace SignalRApi.Controllers
             _aboutService.TAdd(value);
             return Ok("Hakkımda kısmı başarılı bir şekilde eklendi.");
         }
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult DeleteAbout(int id)
         {
             var value = _aboutService.TGetById(id);
@@ -46,7 +46,7 @@ namespace SignalRApi.Controllers
             return Ok("Hakkımda alanı silindi");
         }
         [HttpPut]
-        public IActionResult UpdateAboutAbout(UpdateAboutDto updateAboutDto)
+        public IActionResult UpdateAbout(UpdateAboutDto updateAboutDto)
         {
             var value=_mapper.Map<About>(updateAboutDto);
             //About about = new About()
@@ -60,7 +60,7 @@ namespace SignalRApi.Controllers
             return Ok("Hakkımda alanı güncellendi");
         }
 
-        [HttpGet("GetAbout")]
+        [HttpGet("{id}")]
         public IActionResult GetAbout(int id)
         {
             var value = _mapper.Map<ResultAboutDto>(_aboutService.TGetById(id));
