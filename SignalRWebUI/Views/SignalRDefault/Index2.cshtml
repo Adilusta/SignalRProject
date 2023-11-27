@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index2";
     Layout = "~/Views/AdminLayout/Index.cshtml";
 }
 
@@ -23,7 +23,10 @@
                                 //bağlandıktan sonra bağlantının durumunu yaz.Hata oluşursa da yaz.
                                 connection.start().then(()=>{
                                     $("#connstatus").text(connection.state);
-                                    connection.invoke("SendCategoryCount");
+                                    setInterval(()=>{
+                                           connection.invoke("SendCategoryCount");
+                                    },1000);
+                                 
                                 }).catch((err)=>{
                                     console.log(err)
                                 });

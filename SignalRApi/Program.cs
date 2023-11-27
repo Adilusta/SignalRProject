@@ -24,6 +24,7 @@ builder.Services.AddCors(opt =>
 });
 builder.Services.AddSignalR();
 builder.Services.AddDbContext<SignalRDbContext>();
+
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddScoped<IAboutService,AboutManager>();
