@@ -12,8 +12,10 @@ namespace SignalR.DataAccessLayer.EntityFramework
 {
     public class EfContactDal : EFGenericRepository<Contact>, IContactDal
     {
-        public EfContactDal(SignalRDbContext context) : base(context)
+        private readonly SignalRDbContext _context;
+		public EfContactDal(SignalRDbContext context) : base(context)
         {
+            this._context = context;
         }
     }
 }

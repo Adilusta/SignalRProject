@@ -67,5 +67,12 @@ namespace SignalRApi.Controllers
             //});
             return Ok("Kategori Güncellendi");
         }
+        [HttpGet("CategoryCount")]
+        public IActionResult CategoryCount()
+        {
+            var count = _categoryService.TGetCategoryCount();
+            return Ok(count);
+        }
+
     }
 }

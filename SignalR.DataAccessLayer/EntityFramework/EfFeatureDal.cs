@@ -12,8 +12,10 @@ namespace SignalR.DataAccessLayer.EntityFramework
 {
     public class EfFeatureDal : EFGenericRepository<Feature>, IFeatureDal
     {
-        public EfFeatureDal(SignalRDbContext context) : base(context)
+		private readonly SignalRDbContext _context;
+		public EfFeatureDal(SignalRDbContext context) : base(context)
         {
+            this._context = context;
         }
     }
 }

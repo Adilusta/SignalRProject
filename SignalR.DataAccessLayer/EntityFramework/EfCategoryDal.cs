@@ -12,8 +12,16 @@ namespace SignalR.DataAccessLayer.EntityFramework
 {
     public class EfCategoryDal : EFGenericRepository<Category> , ICategoryDal
     {
-        public EfCategoryDal(SignalRDbContext context) : base(context)
+		private readonly SignalRDbContext _context;
+		public EfCategoryDal(SignalRDbContext context) : base(context)
         {
+			this._context = context;
         }
-    }
+
+		public int GetCategoryCount()
+		{
+			var count = _context.Categories.Count();
+			return count;
+		}
+	}
 }

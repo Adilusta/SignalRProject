@@ -18,7 +18,12 @@ namespace SignalR.BusinessLayer.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void TAdd(Category entity)
+		public int TGetCategoryCount()
+		{
+			return _categoryDal.GetCategoryCount();
+		}
+
+		public void TAdd(Category entity)
         {
            _categoryDal.Add(entity);
         }

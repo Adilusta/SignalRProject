@@ -12,8 +12,10 @@ namespace SignalR.DataAccessLayer.EntityFramework
 {
     public class EfDiscountDal : EFGenericRepository<Discount>, IDiscountDal
     {
-        public EfDiscountDal(SignalRDbContext context) : base(context)
+		private readonly SignalRDbContext _context;
+		public EfDiscountDal(SignalRDbContext context) : base(context)
         {
+            this._context = context;
         }
     }
 }

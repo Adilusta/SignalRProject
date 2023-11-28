@@ -12,8 +12,10 @@ namespace SignalR.DataAccessLayer.EntityFramework
 {
     public class EfSocialMediaDal : EFGenericRepository<SocialMedia>, ISocialMediaDal
     {
-        public EfSocialMediaDal(SignalRDbContext context) : base(context)
+		private readonly SignalRDbContext _context;
+		public EfSocialMediaDal(SignalRDbContext context) : base(context)
         {
+            this._context = context;
         }
     }
 }
