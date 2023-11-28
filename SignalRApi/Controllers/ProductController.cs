@@ -74,5 +74,11 @@ namespace SignalRApi.Controllers
             _productService.TUpdate(value);
             return Ok("Ürün Bilgisi Güncellendi");
         }
+        [HttpGet("ProductCount")]
+        public IActionResult ProductCount()
+        {
+            var count = _productService.GetProductCount();
+            return Ok(count);
+        }
     }
 }

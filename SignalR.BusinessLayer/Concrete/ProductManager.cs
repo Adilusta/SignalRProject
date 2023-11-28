@@ -18,7 +18,13 @@ namespace SignalR.BusinessLayer.Concrete
             _productDal = productDal;
         }
 
-        public List<Product> GetProductsWithCategories()
+		public int GetProductCount()
+		{
+            var count = _productDal.GetProductCount();
+            return count;
+		}
+
+		public List<Product> GetProductsWithCategories()
         {
            return _productDal.GetProductsWithCategories();
         }
