@@ -47,5 +47,17 @@ namespace SignalR.BusinessLayer.Concrete
         {
            _categoryDal.Update(entity);
         }
-    }
+
+		public int TGetActiveCategoryCount()
+		{
+			var activeCategoryCount= _categoryDal.GetActiveCategoryCount();
+            return activeCategoryCount;
+		}
+
+		public int TGetPassiveCategoryCount()
+		{
+            var passiveCategoryCount = _categoryDal.GetPassiveCategoryCount();
+            return passiveCategoryCount;
+		}
+	}
 }

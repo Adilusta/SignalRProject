@@ -17,11 +17,22 @@ namespace SignalR.DataAccessLayer.EntityFramework
         {
 			this._context = context;
         }
-
 		public int GetCategoryCount()
 		{
 			var count = _context.Categories.Count();
 			return count;
+		}
+
+		public int GetPassiveCategoryCount()
+		{
+			var passiveCategoryCount = _context.Categories.Where(x => x.CategoryStatus == false).Count();
+			return passiveCategoryCount;
+		}
+
+		public int GetActiveCategoryCount()
+		{
+			var activeCategoryCount =_context.Categories.Where(x=> x.CategoryStatus==true).Count();
+			return activeCategoryCount;
 		}
 	}
 }
