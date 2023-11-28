@@ -7,6 +7,7 @@ using SignalR.EntityLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -43,5 +44,37 @@ namespace SignalR.DataAccessLayer.EntityFramework
             //}).ToList();
 
         }
-    }
+
+		public int GetProductCountByCategoryNameDrink()
+		{
+            var productCountByCategoryNameDrink = _context.Products.Where(x => x.Category.CategoryName == "İçecek").Count();
+            //var productCountByCategoryNameDrink = _context.Products.Where(x => x.CategoryID == (_context.Categories.Where(y => y.CategoryName == "İçecek").Select(z => z.CategoryID).FirstOrDefault())).Count();
+			return productCountByCategoryNameDrink;
+		}
+
+		public int GetProductCountByCategoryNameHamburger()
+		{
+			var productCountByCategoryNameDrink = _context.Products.Where(x => x.Category.CategoryName == "Hamburger").Count();
+			//var productCountByCategoryNameDrink = _context.Products.Where(x => x.CategoryID == (_context.Categories.Where(y => y.CategoryName == "Hamburger").Select(z => z.CategoryID).FirstOrDefault())).Count();
+			return productCountByCategoryNameDrink;
+		}
+
+		public decimal GetProductPriceAvg()
+		{
+			var productPriceAvg= _context.Products.Average(x => x.Price);
+            return productPriceAvg;
+		}
+
+		public string GetProductNameByMaxPrice()
+		{
+			var productByMaxPrice = _context.Products.Where(x => x.Price == (_context.Products.Max(y => y.Price))).Select(z => z.ProductName).FirstOrDefault();
+			return productByMaxPrice;
+		}
+
+		public string GetProductNameByMinPrice()
+		{
+			var productByMinPrice = _context.Products.Where(x => x.Price == (_context.Products.Min(y => y.Price))).Select(z => z.ProductName).FirstOrDefault();
+			return productByMinPrice;
+		}
+	}
 }
