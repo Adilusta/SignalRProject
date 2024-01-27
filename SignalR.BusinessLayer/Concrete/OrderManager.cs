@@ -18,6 +18,11 @@ namespace SignalR.BusinessLayer.Concrete
 			_orderDal = orderDal;
 		}
 
+		public int GetActiveOrderCount()
+		{
+			return _orderDal.ActiveOrderCount();
+		}
+
 		public void TAdd(Order entity)
 		{
 			_orderDal.Add(entity);

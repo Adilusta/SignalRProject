@@ -23,5 +23,11 @@ namespace SignalRApi.Controllers
 			var totalOrderCount = _orderService.TotalOrderCount();
 			return Ok(totalOrderCount);
 		}
+		[HttpGet("ActiveOrderCount")]
+		public IActionResult ActiveOrderCount()
+		{
+			var activeOrderCount = _orderService.GetActiveOrderCount();
+			return Ok(activeOrderCount);
+		}
 	}
 }

@@ -17,6 +17,13 @@ namespace SignalR.DataAccessLayer.EntityFramework
 		{
 			this._context = context;
 		}
+
+		public int ActiveOrderCount()
+		{
+			var activeOrderCount = _context.Orders.Where(x => x.Description == "Müşteri Masada").Count();
+			return activeOrderCount;
+		}
+
 		public int TotalOrderCount()
 		{
 			var totalOrderCount= _context.Orders.Count();
