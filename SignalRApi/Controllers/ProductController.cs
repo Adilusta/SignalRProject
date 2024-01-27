@@ -99,6 +99,12 @@ namespace SignalRApi.Controllers
             var count = _productService.TGetProductPriceAvg();
             return Ok(count);
         }
+		[HttpGet("ProductPriceAvgByHamburger")]
+		public IActionResult ProductPriceAvgByHamburger()
+		{
+			var priceAvg = _productService.ProductPriceAvgByHamburger();
+			return Ok(priceAvg);
+		}
 		[HttpGet("ProductNameByMaxPrice")]
 		public IActionResult ProductNameByMaxPrice()
 		{
