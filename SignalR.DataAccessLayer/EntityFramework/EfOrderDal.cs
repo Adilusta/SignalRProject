@@ -24,6 +24,12 @@ namespace SignalR.DataAccessLayer.EntityFramework
 			return activeOrderCount;
 		}
 
+		public decimal LastOrderPrice()
+		{
+			var lastOrderPrice = _context.Orders.OrderByDescending(x => x.OrderID).Take(1).Select(y => y.TotalPrice).FirstOrDefault();
+			return lastOrderPrice;
+		}
+
 		public int TotalOrderCount()
 		{
 			var totalOrderCount= _context.Orders.Count();
