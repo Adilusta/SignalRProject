@@ -12,6 +12,12 @@ namespace SignalR.BusinessLayer.Concrete
 	public class OrderManager : IOrderService
 	{
 		private readonly IOrderDal _orderDal;
+
+		public OrderManager(IOrderDal orderDal)
+		{
+			_orderDal = orderDal;
+		}
+
 		public void TAdd(Order entity)
 		{
 			_orderDal.Add(entity);
@@ -30,6 +36,11 @@ namespace SignalR.BusinessLayer.Concrete
 		public List<Order> TGetListAll()
 		{
 			return _orderDal.GetListAll();
+		}
+
+		public int TotalOrderCount()
+		{
+			return _orderDal.TotalOrderCount();
 		}
 
 		public void TUpdate(Order entity)

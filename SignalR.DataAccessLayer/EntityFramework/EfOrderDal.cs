@@ -12,9 +12,15 @@ namespace SignalR.DataAccessLayer.EntityFramework
 {
 	public class EfOrderDal : EFGenericRepository<Order>, IOrderDal
 	{
+		private readonly SignalRDbContext _context;
 		public EfOrderDal(SignalRDbContext context) : base(context)
 		{
-
+			this._context = context;
+		}
+		public int TotalOrderCount()
+		{
+			var totalOrderCount= _context.Orders.Count();
+			return totalOrderCount;
 		}
 	}
 }
