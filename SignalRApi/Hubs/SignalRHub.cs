@@ -77,10 +77,37 @@ namespace SignalRApi.Hubs
 
 
 		}
-		//	public async Task SendCategoryCount()
-		//{
-		//	var value = _categoryService.TGetCategoryCount();
-		//	await Clients.All.SendAsync("ReceiveCategoryCount",value);
-		//}
+		public async Task SendProgress()
+        {
+            var value = _moneyCaseService.GetTotalMoneyCaseAmount();
+            await Clients.All.SendAsync("ReceiveTotalMoneyCaseAmount", value.ToString("0.00") + "₺");
+
+            var value2 = _orderService.GetActiveOrderCount();
+            await Clients.All.SendAsync("ReceiveTActiveOrderCount", value2);
+
+            var value3 = _menuTableService.TGetMenuTableCount();
+            await Clients.All.SendAsync("ReceiveMenuTableCount", value3);
+
+            var value5 = _productService.TGetProductPriceAvg();
+            await Clients.All.SendAsync("ReceiveProductPriceAvg", value5);
+
+            var value6 = _productService.ProductPriceAvgByHamburger();
+            await Clients.All.SendAsync("ReceiveAvgPriceByHamburger", value6);
+
+            var value7 = _productService.TGetProductCountByCategoryNameDrink();
+            await Clients.All.SendAsync("ReceiveProductCountByCategoryNameDrink", value7);
+
+            var value8 = _orderService.TotalOrderCount();
+            await Clients.All.SendAsync("ReceiveTotalOrderCount", value8);
+
+            //var value9 = _productService.TProductPriceBySteakBurger();
+            //await Clients.All.SendAsync("ReceiveProductPriceBySteakBurger", value9);
+
+            //var value10 = _productService.TTotalPriceByDrinkCategory();
+            //await Clients.All.SendAsync("ReceiveTotalPriceByDrinkCategory", value10);
+
+            //var value11 = _productService.TTotalPriceBySaladCategory();
+            //await Clients.All.SendAsync("ReceiveTotalPriceBySaladCategory", value11);
+        }
 	}
 }

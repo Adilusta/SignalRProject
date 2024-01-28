@@ -1,0 +1,66 @@
+﻿@*@model List<ResultContactDto>
+@foreach(var item in Model){*@
+<footer class="footer_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 footer-col">
+                <div class="footer_contact">
+                    <h4>
+                        Bize Ulaşın
+                    </h4>
+                    <div class="contact_link_box">
+                        <a href="#">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>
+                                Lokasyon
+                            </span>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                            <span>
+                                @*@item.Phone*@ 5363001672
+                            </span>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            <span>
+                                @*@item.Mail*@ adilusta4@gmail.com
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <div class="footer_detail">
+                    <a href="/Default/Index/" class="footer-logo">
+                      @*  @item.FooterTitle*@ title buraya gelecek
+                    </a>
+                    <p>
+                       @* @item.FooterDescription*@ açıklama buraya gelecek
+                    </p>
+                        @*@await Component.InvokeAsync("_UILayoutSocialMediaComponentPartial")*@
+                </div>
+            </div>
+            <div class="col-md-4 footer-col">
+                <h4>
+                   @* @item.OpenDays*@ pazartesiden pazara kadar açığız
+                </h4>
+                <p>
+                   @* @item.OpenDaysDescription*@ açıklama yok
+                </p>
+                <p>
+                  @*  @item.OpenHours*@ 7/24 açığız
+                </p>
+            </div>
+        </div>
+        <div class="footer-info">
+            <p>
+                &copy; <span id="displayYear"></span> Tüm Hakları Saklıdır.
+                <a href="https://html.design/">SignalR Restoran</a><br><br>
+                &copy; <span id="displayYear"></span> Geliştiren
+                <a href="https://themewagon.com/" target="_blank">M&Y Yazılım Eğitim Akademi</a>
+            </p>
+        </div>
+    </div>
+</footer>
+@*}*@
