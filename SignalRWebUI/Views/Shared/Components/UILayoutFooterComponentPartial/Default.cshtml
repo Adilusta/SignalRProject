@@ -1,5 +1,6 @@
-﻿@*@model List<ResultContactDto>
-@foreach(var item in Model){*@
+﻿@model List<ResultContactDto>
+@foreach(var item in Model)
+{
 <footer class="footer_section">
     <div class="container">
         <div class="row">
@@ -18,13 +19,13 @@
                         <a href="">
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <span>
-                                @*@item.Phone*@ 5363001672
+                                @item.PhoneNumber
                             </span>
                         </a>
                         <a href="">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             <span>
-                                @*@item.Mail*@ adilusta4@gmail.com
+                                @item.Mail 
                             </span>
                         </a>
                     </div>
@@ -33,23 +34,23 @@
             <div class="col-md-4 footer-col">
                 <div class="footer_detail">
                     <a href="/Default/Index/" class="footer-logo">
-                      @*  @item.FooterTitle*@ title buraya gelecek
+                       @item.FooterTitle
                     </a>
                     <p>
-                       @* @item.FooterDescription*@ açıklama buraya gelecek
+                        @item.FooterDescription
                     </p>
                         @*@await Component.InvokeAsync("_UILayoutSocialMediaComponentPartial")*@
                 </div>
             </div>
             <div class="col-md-4 footer-col">
                 <h4>
-                   @* @item.OpenDays*@ pazartesiden pazara kadar açığız
+                    @item.OpenDays 
                 </h4>
                 <p>
-                   @* @item.OpenDaysDescription*@ açıklama yok
+                    @item.OpenDaysDescription
                 </p>
                 <p>
-                  @*  @item.OpenHours*@ 7/24 açığız
+                    @item.OpenHours
                 </p>
             </div>
         </div>
@@ -58,9 +59,9 @@
                 &copy; <span id="displayYear"></span> Tüm Hakları Saklıdır.
                 <a href="https://html.design/">SignalR Restoran</a><br><br>
                 &copy; <span id="displayYear"></span> Geliştiren
-                <a href="https://themewagon.com/" target="_blank">M&Y Yazılım Eğitim Akademi</a>
+                <a href="https://themewagon.com/" target="_blank">Adil Usta</a>
             </p>
         </div>
     </div>
 </footer>
-@*}*@
+}
