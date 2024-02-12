@@ -10,11 +10,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(opt =>
 {
-	// AllowAnyHeader: Ýstemcinin isteði üzerindeki tüm baþlýklara izin verir.
-	// AllowAnyMethod: Ýstemcinin isteði üzerindeki tüm HTTP yöntemlerine izin verir (GET, POST, PUT, vb.).
-	// SetIsOriginAllowed: Ýstemci kökenini belirler. Bu durumda, herhangi bir kök (origin) izin verilmiþtir.
-	// AllowCredentials: Kimlik bilgilerinin (örneðin, çerezlerin veya HTTP temel kimlik doðrulamasýnýn) kullanýlmasýna izin verir.
-	opt.AddPolicy("CorsPolicy", builder =>
+    // AllowAnyHeader: Ýstemcinin isteði üzerindeki tüm baþlýklara izin verir.
+    // AllowAnyMethod: Ýstemcinin isteði üzerindeki tüm HTTP yöntemlerine izin verir (GET, POST, PUT, vb.).
+    // SetIsOriginAllowed: Ýstemci kökenini belirler. Bu durumda, herhangi bir kök (origin) izin verilmiþtir.
+    // AllowCredentials: Kimlik bilgilerinin (örneðin, çerezlerin veya HTTP temel kimlik doðrulamasýnýn) kullanýlmasýna izin verir.
+    opt.AddPolicy("CorsPolicy", builder =>
     {
         builder.AllowAnyHeader()
         .AllowAnyMethod()
@@ -29,7 +29,7 @@ builder.Services.AddDbContext<SignalRDbContext>();
 
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
-builder.Services.AddScoped<IAboutService,AboutManager>();
+builder.Services.AddScoped<IAboutService, AboutManager>();
 builder.Services.AddScoped<IAboutDal, EfAboutDal>();
 
 builder.Services.AddScoped<IBookingService, BookingManager>();
@@ -38,7 +38,7 @@ builder.Services.AddScoped<IBookingDal, EfBookingDal>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 
-builder.Services.AddScoped<IContactService,ContactManager>();
+builder.Services.AddScoped<IContactService, ContactManager>();
 builder.Services.AddScoped<IContactDal, EfContactDal>();
 
 builder.Services.AddScoped<IDiscountService, DiscountManager>();
@@ -70,6 +70,9 @@ builder.Services.AddScoped<IMenuTableDal, EfMenuTableDal>();
 
 builder.Services.AddScoped<ISliderService, SliderManager>();
 builder.Services.AddScoped<ISliderDal, EfSliderDal>();
+
+builder.Services.AddScoped<IBasketService, BasketManager>();
+builder.Services.AddScoped<IBasketDal, EfBasketDal>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
