@@ -58,6 +58,41 @@
                            }
                     </table>
                 </div>
+
+                    <div class="col-log-4">
+                         <form>
+                            <div class="input-group">
+                                <input type="text" id="couponcode" class="form-control border-1 p-4" placeholder="Kupon Kodunuz" />
+                                <div>
+                                    <a style="height:48px;padding-top:11px; margin-left:5px;" class="btn btn-warning" id="btncouponcode">Kuponu Uygula</a>
+                                </div>
+                            </div>
+                         </form>
+                         <br />
+                         <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-warning pr-3">Sepet Özeti</span></h5>
+
+                             <div class="bg-light p-30 mb-5">
+                                  <div id="container" class="border-bottom pb-2">
+                                        <div class="d-flex justify-content-between mb-6">
+                                            <h6>Toplam Tutar</h6>
+                                              <h6><span id="totalprice">224</span>₺</h6>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <h6 class="font-weight-medium">Kdv Oranı</h6>
+                                            <h6 id="kdv" class="font-weight-medium">20</>₺</h6>
+                                        </div>
+                                        <br />
+                                  </div>
+                                   <div class="pt-2">
+                                        <div class="d-flex justify-content-between mt-2">
+                                            <h5>Toplam Tutar</h5>
+                                            <h5><span id="totalpricewithkdv">244</span>₺</h5>
+                                        </div>
+                                        <br />
+                                        <button id="btnchecked" class="btn btn-block btn-warning font-weight-bold my-3">Siparişi Tamamla</button>
+                                   </div>
+                             </div>
+                    </div>
            </div>
        </div>
     @await Component.InvokeAsync("UILayoutFooterComponentPartial")
