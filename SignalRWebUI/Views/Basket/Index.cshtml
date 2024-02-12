@@ -2,6 +2,7 @@
 @model List<ResultBasketDto>
 @{
     Layout = null;
+    int count = 0;
 }
 
 <!DOCTYPE html>
@@ -41,6 +42,20 @@
                             <th>Sil</th>
                              </tr>
                          </thead>
+                         @foreach(var item in Model)
+                         {
+                            count++;
+                        <tbody class="align-middle">
+                           <tr>
+                               <td class="align-middle">@count</td>
+                               <td class="align-middle">@item.Product.ProductName</td>
+                                <td class="align-middle">@item.Count</td>
+                                <td class="align-middle">@item.Price</td>
+                                <td class="align-middle">@item.TotalPrice</td>
+                                <td class="align-middle btn-delete"><a class="btn btn-sm btn-danger" href="/Basket/DeleteBasket/@item.BasketID/"><i class="fa fa-times"></i></a></td>
+                           </tr>
+                        </tbody>
+                           }
                     </table>
                 </div>
            </div>

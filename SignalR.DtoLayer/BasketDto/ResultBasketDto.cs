@@ -1,6 +1,11 @@
-﻿using SignalRWebUI.Dtos.ProductDtos;
+﻿using SignalR.DtoLayer.ProductDto;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace SignalRWebUI.Dtos.BasketDtos
+namespace SignalR.DtoLayer.BasketDto
 {
     public class ResultBasketDto
     {
